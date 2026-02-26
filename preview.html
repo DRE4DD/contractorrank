@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>Preview Your Contractor Website | ContractorRank.agency</title>
+  <meta name="description" content="See a live preview of your contractor website before you buy. Select your state, city, and trade — HVAC, plumbing, roofing, landscaping, gravel, or tree removal — and see your site instantly.">
+  <meta name="keywords" content="contractor website preview, HVAC website preview, plumber website design, roofing website preview, contractor web design tool">
+  <meta name="author" content="ContractorRank.agency">
+  <link rel="canonical" href="https://contractorrank.agency/preview.html">
+
+  <meta property="og:title" content="Preview Your Contractor Website | ContractorRank.agency">
+  <meta property="og:description" content="Interactive tool: select your state, city, and trade to instantly preview what your contractor website could look like.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://contractorrank.agency/preview.html">
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Contractor Website Preview Tool — ContractorRank.agency",
+    "url": "https://contractorrank.agency/preview.html",
+    "description": "Interactive contractor website preview tool. Select state, city, and service type to generate a realistic website preview.",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://contractorrank.agency/" },
+        { "@type": "ListItem", "position": 2, "name": "Preview", "item": "https://contractorrank.agency/preview.html" }
+      ]
+    }
+  }
+  </script>
+</head>
+<body>
+
+<!-- ── Navigation ── -->
+<nav id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">CONTRACTOR<span>RANK</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="preview.html" class="active">Preview</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="btn btn-primary btn-sm nav-cta">Get Free Audit</a>
+      <button class="hamburger" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<nav class="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="preview.html">Preview</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="btn btn-primary">Get Free Audit</a>
+</nav>
+
+<!-- ── Page Header ── -->
+<header class="page-header">
+  <div class="container">
+    <div class="page-header-content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>Preview Tool</span>
+      </nav>
+      <span class="section-label">Interactive Preview</span>
+      <h1>See Your Contractor Website <span class="gradient-text">Before You Commit</span></h1>
+      <p>Select your state, city, and trade below. We'll instantly generate a realistic preview of what your professional contractor website would look like — live, right here on the page.</p>
+    </div>
+  </div>
+</header>
+
+<!-- ── Preview Tool ── -->
+<section class="section" style="padding-top:20px;">
+  <div class="container">
+
+    <div class="notice-box">
+      ⚡ This preview generates a realistic mockup of your contractor website. When you're ready to build the real thing, <a href="contact.html" style="color:var(--accent-gold);font-weight:700;text-decoration:underline;">contact us here</a>.
+    </div>
+
+    <!-- Controls -->
+    <div class="preview-controls">
+      <h3 style="margin-bottom:8px;">Configure Your Preview</h3>
+      <p style="font-size:0.9rem;margin-bottom:28px;">Choose your location and trade to generate a custom site preview. All three fields required.</p>
+
+      <div class="preview-controls-grid">
+        <div class="form-group" style="margin-bottom:0;">
+          <label for="stateSelect">Step 1 — Select Your State</label>
+          <select id="stateSelect">
+            <option value="">Choose a State</option>
+          </select>
+        </div>
+
+        <div class="form-group" style="margin-bottom:0;">
+          <label for="citySelect">Step 2 — Select Your City</label>
+          <select id="citySelect" disabled>
+            <option value="">Select a City</option>
+          </select>
+        </div>
+
+        <div class="form-group" style="margin-bottom:0;">
+          <label for="serviceSelect">Step 3 — Select Your Trade</label>
+          <select id="serviceSelect">
+            <option value="">Choose a Trade</option>
+            <option value="HVAC">HVAC (Heating & Cooling)</option>
+            <option value="Plumbing">Plumbing</option>
+            <option value="Gravel">Gravel & Aggregate</option>
+            <option value="Tree Removal">Tree Removal</option>
+            <option value="Landscaping">Landscaping</option>
+            <option value="Roofing">Roofing</option>
+          </select>
+        </div>
+      </div>
+
+      <button id="generatePreview" class="btn btn-primary btn-lg w-full" style="justify-content:center;" disabled>
+        ⚡ Generate My Website Preview
+      </button>
+    </div>
+
+    <!-- Preview Window -->
+    <div id="previewWindow" class="preview-window" style="display:none;">
+      <!-- Browser Chrome -->
+      <div class="browser-chrome">
+        <div class="browser-dots">
+          <div class="browser-dot b-red"></div>
+          <div class="browser-dot b-yellow"></div>
+          <div class="browser-dot b-green"></div>
+        </div>
+        <div class="browser-url-bar">
+          <span class="lock">🔒</span>
+          <span class="browser-url-text" id="browserUrl">contractorrank.agency</span>
+        </div>
+      </div>
+      <!-- Preview Content -->
+      <div id="previewContent" class="preview-content">
+        <!-- Generated by preview.js -->
+      </div>
+    </div>
+
+    <!-- After Preview CTA -->
+    <div style="margin-top:48px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:40px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:32px;" class="fade-in">
+      <div>
+        <h3 style="margin-bottom:12px;">Ready to build the real thing?</h3>
+        <p style="font-size:0.95rem;">This preview is just a starting point. Your actual website will be custom-designed, fully optimized for SEO, coded cleanly, and built to rank in your specific market. Let's make it happen.</p>
+      </div>
+      <div style="flex-shrink:0;">
+        <a href="contact.html" class="btn btn-primary btn-lg">Start My Project →</a>
+      </div>
+    </div>
+
+    <!-- How It Works -->
+    <div style="margin-top:64px;">
+      <h2 class="text-center" style="margin-bottom:48px;">How We Build <span class="text-accent">Real</span> Contractor Websites</h2>
+      <div class="steps">
+        <div class="step fade-in">
+          <div class="step-num">1</div>
+          <h4>Discovery Call</h4>
+          <p>We learn about your business, your market, and your competition in a 30-minute strategy session.</p>
+        </div>
+        <div class="step fade-in fade-in-delay-1">
+          <div class="step-num">2</div>
+          <h4>Strategy & Design</h4>
+          <p>We research your keywords, plan your site structure, and design your custom layout for approval.</p>
+        </div>
+        <div class="step fade-in fade-in-delay-2">
+          <div class="step-num">3</div>
+          <h4>Development</h4>
+          <p>We handcode your site — clean HTML, CSS, and JavaScript — optimized for speed and search engines.</p>
+        </div>
+        <div class="step fade-in fade-in-delay-3">
+          <div class="step-num">4</div>
+          <h4>Launch & Rank</h4>
+          <p>Your site goes live. We submit to search engines, set up analytics, and monitor your rankings.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta-section">
+  <div class="container" style="position:relative;z-index:1;">
+    <span class="section-label" style="display:block;text-align:center;padding-left:0;">
+      <span style="display:inline-block;padding-left:36px;position:relative;">
+        Next Step
+        <span style="position:absolute;left:0;top:50%;transform:translateY(-50%);width:24px;height:2px;background:var(--accent);"></span>
+      </span>
+    </span>
+    <h2>Liked What You Saw in the Preview?</h2>
+    <p>Imagine that — but professionally built, SEO-optimized, and ranked in Google. Let's talk about what we can do for your business.</p>
+    <a href="contact.html" class="btn btn-primary btn-lg">Contact Us Today →</a>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">CONTRACTOR<span>RANK</span></a>
+        <p>The only digital agency built exclusively for contractors. We build websites that rank, convert, and make your phone ring.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="services.html#build">Website Build</a></li>
+          <li><a href="services.html#redesign">Redesign & Fixes</a></li>
+          <li><a href="services.html#seo">SEO Optimization</a></li>
+          <li><a href="services.html#gbp">Google Business Profile</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="preview.html">Preview Tool</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>States Served</h5>
+        <ul>
+          <li><a href="#">New Mexico</a></li>
+          <li><a href="#">Arizona</a></li>
+          <li><a href="#">Colorado</a></li>
+          <li><a href="#">Texas</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p style="color:var(--text-muted);">© 2025 ContractorRank.agency · All rights reserved.</p>
+      <p style="color:var(--text-muted);">Built for contractors. Ranked for results.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/preview.js"></script>
+</body>
+</html>
