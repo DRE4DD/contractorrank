@@ -235,7 +235,7 @@ function buildSiteHTML({ city, state, stateAbbr, service, serviceData, businessN
         ['S.R.', `Called them at 8am and they were here by noon. Fixed everything quickly. Will definitely use again.`]
       ].map(([name, review]) => `
         <div style="background:#fff;border:1px solid #e0e0e0;border-radius:8px;padding:20px;">
-          <div style="color:#FFB800;font-size:0.9rem;margin-bottom:8px;">★★★★★</div>
+          <div style="color:#D4AF37;font-size:0.9rem;margin-bottom:8px;">★★★★★</div>
           <p style="font-size:0.82rem;color:#444;line-height:1.6;margin-bottom:12px;">"${review}"</p>
           <div style="font-size:0.78rem;font-weight:700;color:#111;">— ${name}, ${city}, ${stateAbbr}</div>
         </div>
