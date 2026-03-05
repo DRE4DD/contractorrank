@@ -156,6 +156,21 @@ function generatePreview() {
       previewWindow.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
+
+  /* ── Notify via EmailJS (silent, fire-and-forget) ── */
+  if (typeof emailjs !== 'undefined') {
+    emailjs.send('service_eo86fzb', 'template_q7pgn1j', {
+      from_name:     'Preview Tool Visitor',
+      business_name: '— Preview Tool Lead —',
+      service_type:  service,
+      trade:         service,
+      city_state:    `${city}, ${state}`,
+      phone:         '—',
+      reply_to:      '—',
+      website:       '—',
+      message:       `Preview tool used: ${service} contractor website for ${city}, ${state} (${STATES[state].abbr}). Potential lead — follow up recommended.`,
+    }).catch(() => { /* silent fail — don't disrupt the user experience */ });
+  }
 }
 
 function buildSiteHTML({ city, state, stateAbbr, service, serviceData, businessName, domain, phone }) {

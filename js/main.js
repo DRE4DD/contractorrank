@@ -4,6 +4,11 @@
 
 'use strict';
 
+/* ── EmailJS init ── */
+if (typeof emailjs !== 'undefined') {
+  emailjs.init('rYklodO_NqWHQOILi');
+}
+
 /* ── Navbar scroll effect ── */
 const navbar = document.getElementById('navbar');
 const hamburger = document.querySelector('.hamburger');
@@ -114,23 +119,40 @@ if (contactForm) {
     btn.disabled = true;
     btn.textContent = 'Sending...';
 
-    // Simulate submission (replace with actual form handler / endpoint)
-    setTimeout(() => {
-      const successMsg = document.getElementById('formSuccess');
-      if (successMsg) {
-        contactForm.style.display = 'none';
-        successMsg.style.display = 'block';
-      } else {
-        btn.textContent = 'Message Sent! ✓';
-        btn.style.background = '#22c55e';
-        setTimeout(() => {
-          btn.disabled = false;
-          btn.textContent = originalText;
-          btn.style.background = '';
-          contactForm.reset();
-        }, 3000);
-      }
-    }, 1200);
+    const templateParams = {
+      from_name:     document.getElementById('contactName')?.value    || '',
+      business_name: document.getElementById('contactBusiness')?.value || '',
+      service_type:  document.getElementById('contactService')?.value  || '',
+      trade:         document.getElementById('contactTrade')?.value    || '',
+      city_state:    document.getElementById('contactCity')?.value     || '',
+      phone:         document.getElementById('contactPhone')?.value    || '',
+      reply_to:      document.getElementById('contactEmail')?.value    || '',
+      website:       document.getElementById('contactWebsite')?.value  || '',
+      message:       document.getElementById('contactMessage')?.value  || '',
+    };
+
+    emailjs.send('service_eo86fzb', 'template_q7pgn1j', templateParams)
+      .then(() => {
+        const successMsg = document.getElementById('formSuccess');
+        if (successMsg) {
+          contactForm.style.display = 'none';
+          successMsg.style.display = 'block';
+        } else {
+          btn.textContent = 'Message Sent! ✓';
+          btn.style.background = '#22c55e';
+          setTimeout(() => {
+            btn.disabled = false;
+            btn.textContent = originalText;
+            btn.style.background = '';
+            contactForm.reset();
+          }, 3000);
+        }
+      })
+      .catch(() => {
+        btn.disabled = false;
+        btn.textContent = originalText;
+        alert('Something went wrong sending your message. Please email us directly at hello@contractorrank.agency');
+      });
   });
 }
 
